@@ -1,6 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from src.users import router as users_router
 
 app = FastAPI(title="Dojdevik")
 
@@ -19,9 +20,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(users_router)
+
 @app.get("/")
 async def start():
     return "{'message': 'Hello, Dojdevik'}"
+
 
 if __name__ == "__main__":
     uvicorn.run("main:app", reload=True)

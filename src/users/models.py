@@ -1,19 +1,18 @@
 from datetime import datetime
-from pydantic import EmailStr
 from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column
-from backend.database import Base
+from src.database import Base
 
 class UserModel(Base):
     username: Mapped[str] = mapped_column(
-        String(lenght=14),
+        String,
         unique=True,
         nullable=False
     )
     password: Mapped[str] = mapped_column(
         nullable=False
     )
-    email: Mapped[EmailStr] = mapped_column(
+    email: Mapped[str] = mapped_column(
         unique=True,
         nullable=False
     )
