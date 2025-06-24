@@ -11,5 +11,5 @@ async def get_weather():
             result = await response.json()
             weather = result["weather"][0]["main"]
             temp = result["main"]["temp"]
-            return [{"weather": weather},
-                    {"temp": round(temp)}]
+            return {"weather": weather,
+                    "temp": round(temp)}
