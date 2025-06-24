@@ -2,6 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.users import router as users_router
+from src.weather import router as weather_router
 
 app = FastAPI(title="Dojdevik")
 
@@ -21,11 +22,7 @@ app.add_middleware(
 )
 
 app.include_router(users_router)
-
-@app.get("/")
-async def start():
-    return "{'message': 'Hello, Dojdevik'}"
-
+app.include_router(weather_router)
 
 if __name__ == "__main__":
     uvicorn.run("main:app", reload=True)
