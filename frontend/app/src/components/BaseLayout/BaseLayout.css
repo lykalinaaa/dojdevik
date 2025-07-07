@@ -1,0 +1,11 @@
+.base {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, #FFECAF, #DDE9FA);
+}
+
+.base_page-wrapper {
+    max-width: 800px;
+    height: 100vh;
+    margin: auto;
+}
