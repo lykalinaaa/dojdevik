@@ -1,0 +1,16 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: 'Roboto Serif';
+  src: url('../assets/fonts/RobotoSerif-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-roboto {
+  font-family: 'Roboto Serif', serif;
+  font-weight: 400;
+}
